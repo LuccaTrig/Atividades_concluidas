@@ -18,7 +18,7 @@ import math
 min_estacionados = int(input('Minutos estacionados:'))
 valor_total = 0
 horas = math.ceil(min_estacionados / 60) 
-print(horas)
+print(f'horas:{horas}')
 hrs2 = 16
 hrs4 = 10
 hrs12 = 24
@@ -26,15 +26,15 @@ hrs12 = 24
 if horas <= 2:
     valor_total = hrs2
 
-if horas <= 4: 
+elif horas <= 4: 
     horas= horas - 2
     valor_total = hrs2 + (horas * 5)
 
-if horas < 12:
+elif horas < 12:
     horas = horas - 4
     valor_total = hrs2 + hrs4 + (horas * 3)
 
-if horas >= 12:
+elif horas >= 12:
     valor_total = hrs2 + hrs4 + hrs12 + 30
 
 print(f'Total a pagar: {valor_total}')
